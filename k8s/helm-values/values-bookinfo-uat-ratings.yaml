@@ -1,6 +1,6 @@
 ratings:
   namespace: student108-bookinfo-uat
-  image: ghcr.io/bankhubjar/bookinfo-ratings
+  image: ghcr.io/bankhubjar/bookinfo_ratings
   tag: uat
   replicas: 1
   imagePullSecrets: registry-bookinfo

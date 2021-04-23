@@ -1,6 +1,6 @@
 ratings:
   namespace: student108-bookinfo-dev
-  image: ghcr.io/bankhubjar/bookinfo-ratings
+  image: ghcr.io/bankhubjar/bookinfo_ratings
   tag: dev
   replicas: 1
   imagePullSecrets: registry-bookinfo
