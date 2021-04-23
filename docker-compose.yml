@@ -1,7 +1,7 @@
 services:
   ratings:
     build: .
-    image: ghcr.io/bankhubjar/bookinfo_ratings:prd
+    image: ghcr.io/bankhubjar/bookinfo_ratings:dev
     ports:
       - "8080:8080"
     environment:
