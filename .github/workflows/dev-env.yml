@@ -49,6 +49,8 @@ jobs:
   acceptance_test:
     runs-on: ubuntu-20.04
     steps:
-      - run: curl http://bookinfo.dev.opsta.net/student108/ratings/health | grep "Ratings is working"
-      - if: echo $?
-        - run: echo "Pass"
+      - run: echo "pass=$curl http://bookinfo.dev.opsta.net/student108/ratings/health | grep "Ratings is working" && echo $?" >> $pass
+      - if: $pass
+        - name: pass
+          run: test pass
+      
