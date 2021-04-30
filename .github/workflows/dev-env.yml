@@ -47,8 +47,9 @@ jobs:
               }
             }
   acceptance_test:
+    needs: deploy
     runs-on: ubuntu-20.04
     steps:
-      - run: echo "pass=$curl http://bookinfo.dev.opsta.net/student108/ratings/health | grep "Ratings is working" && echo $?" >> $pass
+      - run: curl http://bookinfo.dev.opsta.net/student108/ratings/health | grep "Ratings is working" && echo $?
 
       
