@@ -24,7 +24,7 @@ jobs:
         with:
           helm: helm3
           release: bookinfo-prd-ratings
-          namespace: student169-bookinfo-prd
+          namespace: student108-bookinfo-prd
           chart: k8s/helm
           value-files: k8s/helm-values/values-bookinfo-prd-ratings.yaml
           values: |
@@ -36,3 +36,9 @@ jobs:
                 "COMMIT_SHA": "${{ github.sha }}"
               }
             }
+  acceptance_test:
+    needs: deploy-prd
+    runs-on: ubuntu-20.04
+    steps:
+      - name: acceptance test
+        run: curl http://bookinfo.opsta.net/student108/ratings/health | grep "Ratings is working" && echo $?
